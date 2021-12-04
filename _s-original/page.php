@@ -12,30 +12,41 @@
 
 get_header(); ?>
 
-	<div id="page-primary" class="site-primary">
-		<div class="grid-container">
+  <div id="page-primary" class="site-primary">
+    <div class="grid-container">
       <div class="grid-x grid-padding-x">
 
-				<main id="page-main" class="site-main small-12 large-8 cell" role="main">
+        <main id="page-main" class="site-main small-12 large-8 cell" role="main">
 
-					<?php while ( have_posts() ) : the_post(); ?>
+          <?php while ( have_posts() ) : the_post(); ?>
 
-						<?php get_template_part( 'template-parts/content', 'page' ); ?>
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+              <header class="entry-header">
+                <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+              </header><!-- .entry-header -->
 
-						<?php
-							// If comments are open or we have at least one comment, load up the comment template
-							if ( comments_open() || get_comments_number() ) :
-								comments_template();
-							endif;
-						?>
+              <div class="entry-content">
+                <?php the_content(); ?>
+                <?php
+                  wp_link_pages( array(
+                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', '_sSs' ),
+                    'after'  => '</div>',
+                  ) );
+                ?>
+              </div><!-- .entry-content -->
 
-					<?php endwhile; // end of the loop. ?>
+              <footer class="entry-footer">
+                <?php edit_post_link( esc_html__( 'Edit', '_sSs' ), '<span class="edit-link">', '</span>' ); ?>
+              </footer><!-- .entry-footer -->
+            </article><!-- #post-## -->
 
-				</main><!-- #page-main -->
-				<?php get_sidebar(); ?>
+          <?php endwhile; // end of the loop. ?>
 
-			</div><!-- .grid-x grid-padding-x -->
+        </main><!-- #page-main -->
+        <?php get_sidebar(); ?>
+
+      </div><!-- .grid-x grid-padding-x -->
     </div><!-- .grid-container -->
-	</div><!-- #page-primary -->
+  </div><!-- #page-primary -->
 
 <?php get_footer(); ?>

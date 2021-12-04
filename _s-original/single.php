@@ -7,32 +7,41 @@
 
 get_header(); ?>
 
-	<div id="single-primary" class="site-primary">
-		<div class="grid-container">
+  <div id="single-primary" class="site-primary">
+    <div class="grid-container">
       <div class="grid-x grid-padding-x">
 
-				<main id="single-main" class="site-main small-12 large-8 cell" role="main">
+        <main id="single-main" class="site-main small-12 large-8 cell" role="main">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+        <?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'template-parts/content', 'single' ); ?>
+          <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <header class="entry-header">
+              <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-					<?php the_post_navigation(); ?>
+              <div class="entry-meta">
+                <?php _sSs_posted_on(); ?>
+              </div><!-- .entry-meta -->
+            </header><!-- .entry-header -->
 
-					<?php
-						// If comments are open or we have at least one comment, load up the comment template
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
-					?>
+            <div class="entry-content">
+              <?php the_content(); ?>
+            </div><!-- .entry-content -->
 
-				<?php endwhile; // end of the loop. ?>
+            <footer class="entry-footer">
+              <?php _sSs_entry_footer(); ?>
+            </footer><!-- .entry-footer -->
+          </article><!-- #post-## -->
 
-				</main><!-- #single-main -->
-				<?php get_sidebar(); ?>
+          <?php the_post_navigation(); ?>
 
-			</div><!-- .grid-x grid-padding-x -->
+        <?php endwhile; // end of the loop. ?>
+
+        </main><!-- #single-main -->
+        <?php get_sidebar(); ?>
+
+      </div><!-- .grid-x grid-padding-x -->
     </div><!-- .grid-container -->
-	</div><!-- #single-primary -->
+  </div><!-- #single-primary -->
 
 <?php get_footer(); ?>
