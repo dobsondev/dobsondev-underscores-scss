@@ -1,0 +1,542 @@
+/*
+Theme Name: _SsS
+Theme URI: http://underscores.dobsondev.com/
+Author: Alex Dobson
+Author URI: http://dobsondev.com/
+Description: SUP?! I'm a theme called <code>_SsS</code> based on <em>underscores</em>. I was created using the DobsonDev Underscores Theme generator script (http://underscores.dobsondev.com/), which creates a theme using Underscores (http://underscores.me/) as a starting base with Foundation included as a great front-end framework. I find this combination extremely powerful and easy to work with. I hope you enjoy your theme!
+Version: 1.0.0
+License: The MIT License (MIT)
+License URI: http://opensource.org/licenses/MIT
+Text Domain: _sSs
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+_SsS is based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+1.0 Foundation Changes
+2.0 Reusable Styles
+3.0 Accessibility
+4.0 Alignments
+5.0 Clearings
+6.0 Widgets
+7.0 Content
+  7.1 Posts and pages
+  7.2 Asides
+  7.3 Comments
+8.0 Infinite scroll
+9.0 Media
+  9.1 Captions
+  9.2 Galleries
+  9.3 Embedded Elements
+10.0 Numerical Pagination
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Foundation Changes
+--------------------------------------------------------------*/
+
+ol, ul {
+  margin-left: 2em;
+}
+
+/*--------------------------------------------------------------
+2.0 Reusable Styles
+--------------------------------------------------------------*/
+
+ul.twoCol {
+  -moz-column-count: 2;
+  -moz-column-gap: 1em;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 1em;
+  column-count: 2;
+  column-gap: 1em;
+}
+
+ul.threeCol {
+  -moz-column-count: 3;
+  -moz-column-gap: 1em;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 1em;
+  column-count: 3;
+  column-gap: 1em;
+}
+
+i.fa-facebook-square,
+i.fa-facebook-official,
+i.fa-facebook-f,
+i.fa-facebook {
+  color: #3B5998;
+}
+
+i.fa-twitter-square,
+i.fa-twitter {
+  color: #55ACEE;
+}
+
+i.fa-instagram {
+  color: #BC2A8D;
+}
+
+i.fa-linkedin-square,
+i.fa-linkedin {
+  color: #0077B5;
+}
+
+i.fa-google-plus-square,
+i.fa-google-plus {
+  color: #D34836;
+}
+
+i.fa-youtube-square,
+i.fa-youtube-play,
+i.fa-youtube {
+  color: #E52D27;
+}
+
+i.fa-rss-square,
+i.fa-rss {
+  color: #FF6600;
+}
+
+div.div-line {
+  width: 50%;
+  max-width: 200px;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  border-top: 1px solid #09F;
+}
+
+div.div-line.extended {
+  width: 75%;
+  max-width: 100%;
+}
+
+div.div-line.centered {
+  margin: 13px auto;
+}
+
+div.div-line.white {
+  border-top: 1px solid #FFF;
+}
+
+div.div-line.black {
+  border-top: 1px solid #000;
+}
+
+a.btn {
+  font-size: 1.15em;
+  line-height: 1.05em;
+  font-weight: bold;
+  text-align: center;
+  color: #FFF;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: top;
+  text-transform: uppercase;
+  -webkit-transition: background .3s ease 0s;
+  transition: background .3s ease 0s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+  padding: 15px 22px 13px;
+  border-bottom: 3px solid #005288;
+  background: #09F;
+}
+
+a.btn:hover {
+  background: #006DB3;
+}
+
+/*--------------------------------------------------------------
+3.0 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+
+/*--------------------------------------------------------------
+4.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+5.0 Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  content: "";
+  display: table;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both;
+}
+
+/*--------------------------------------------------------------
+6.0 Widgets
+--------------------------------------------------------------*/
+.widget {
+  margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+  max-width: 100%;
+}
+
+/* Search widget. */
+.widget_search .search-submit {
+  display: none;
+}
+
+h1.widget-title {
+  font-size: 2rem;
+}
+
+/*--------------------------------------------------------------
+7.0 Content
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+7.1 Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+  display: block;
+}
+
+.post.sticky {
+  position: relative;
+}
+
+.hentry {
+  margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+  display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+  display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+7.2 Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+7.3 Comments
+--------------------------------------------------------------*/
+.comment-content a {
+  word-wrap: break-word;
+}
+
+.bypostauthor {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+8.0 Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+  display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+9.0 Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+9.1 Captions
+--------------------------------------------------------------*/
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin: 0 auto;
+}
+
+.wp-caption-text {
+  text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+  margin: 0.1em 0;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/*--------------------------------------------------------------
+9.2 Galleries
+--------------------------------------------------------------*/
+.gallery {
+  margin-bottom: 1.5em;
+}
+
+.gallery-item {
+  margin: 1em 0;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+  max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+  max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+  max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+  max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+  max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+  max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+  max-width: 11.11%;
+}
+
+.gallery-caption {
+  display: block;
+}
+
+/* Medium Only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .gallery-columns-4 .gallery-item {
+    max-width: 33.33%;
+  }
+  .gallery-columns-5 .gallery-item {
+    max-width: 33.33%;
+  }
+  .gallery-columns-6 .gallery-item {
+    max-width: 33.33%;
+  }
+  .gallery-columns-7 .gallery-item {
+    max-width: 33.33%;
+  }
+  .gallery-columns-8 .gallery-item {
+    max-width: 33.33%;
+  }
+  .gallery-columns-9 .gallery-item {
+    max-width: 33.33%;
+  }
+}
+
+/* Small Only */
+@media screen and (max-width: 39.9375em) {
+  .gallery-columns-3 .gallery-item {
+    max-width: 50%;
+  }
+  .gallery-columns-4 .gallery-item {
+    max-width: 50%;
+  }
+  .gallery-columns-5 .gallery-item {
+    max-width: 50%;
+  }
+  .gallery-columns-6 .gallery-item {
+    max-width: 50%;
+  }
+  .gallery-columns-7 .gallery-item {
+    max-width: 50%;
+  }
+  .gallery-columns-8 .gallery-item {
+    max-width: 50%;
+  }
+  .gallery-columns-9 .gallery-item {
+    max-width: 50%;
+  }
+}
+
+/*--------------------------------------------------------------
+9.3 Emebedded Elements
+--------------------------------------------------------------*/
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*--------------------------------------------------------------
+10.0 Numerical Pagination
+--------------------------------------------------------------*/
+div.numeric-post-navigation {
+  text-align: center;
+  margin: 1.15em 0.85em;
+}
+
+div.numeric-post-navigation li a,
+div.numeric-post-navigation li a:hover,
+div.numeric-post-navigation li.active a,
+div.numeric-post-navigation li.disabled {
+  color: #FEFEFE;
+  text-decoration:none;
+}
+
+div.numeric-post-navigation li {
+  display: inline;
+}
+
+div.numeric-post-navigation li a,
+div.numeric-post-navigation li a:hover,
+div.numeric-post-navigation li.active a,
+div.numeric-post-navigation li.disabled {
+  background-color: #177ABA;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 12px;
+  padding: 0.75rem;
+}
+
+div.numeric-post-navigation li a:hover,
+div.numeric-post-navigation li.active a {
+  background-color: #076099;
+}
+
+/*--------------------------------------------------------------
+# Responsive Design Media Queries
+--------------------------------------------------------------*/
+@media screen and (max-width: 39.9375em) {} /* Small only */
+@media screen and (min-width: 40em) {} /* Medium and up */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {} /* Medium only */
+@media screen and (min-width: 64em) {} /* Large and up */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {} /* Large only */

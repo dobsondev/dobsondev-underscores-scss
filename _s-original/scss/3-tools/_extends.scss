@@ -1,0 +1,36 @@
+%transition {
+  transition: all 0.3s ease-in-out;
+}
+
+%scroll-x {
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+%position-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+%position-cover-full {
+  position: absolute;
+  top: 0;
+  left: calc((-100vw + 100%) / 2);
+  width: 100vw;
+  height: 100%;
+}
+
+%pseudo-cover {
+  @extend %position-cover;
+  content: '';
+  pointer-events: none;
+}
+
+%pseudo-cover-full {
+  @extend %position-cover-full;
+  content: '';
+  pointer-events: none;
+}
