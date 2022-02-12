@@ -15,7 +15,7 @@ add_action( 'admin_init', '_sSs_theme_settings_register' );
  *
  */
 function _sSs_theme_settings() {
-	add_menu_page( 'Dura-Haul Canada Theme Settings', 'Dura-Haul Settings', 'manage_options', '_sSs-theme-settings', '_sSs_theme_settings_admin_page', 'dashicons-admin-settings', 59.999 );
+	add_menu_page( 'Theme Settings', 'Theme Settings', 'manage_options', '_sSs-theme-settings', '_sSs_theme_settings_admin_page', 'dashicons-admin-settings', 59.999 );
 }
 add_action( 'admin_menu', '_sSs_theme_settings' );
 
@@ -25,7 +25,7 @@ add_action( 'admin_menu', '_sSs_theme_settings' );
 function _sSs_theme_settings_admin_page() {
   ?>
     <div class="wrap">
-      <h1>Dura-Haul Canada Theme Settings</h1>
+      <h1>Theme Settings</h1>
       <hr />
 
       <form method="post" action="options.php">
@@ -39,14 +39,6 @@ function _sSs_theme_settings_admin_page() {
           <tr valign="top">
             <th scope="row">Contact Us URL</th>
             <td><input type="text" name="_sSs_contact_us_url" size="32" value="<?php echo esc_attr( get_option('_sSs_contact_us_url') ); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Become a Dealer URL</th>
-            <td><input type="text" name="_sSs_become_a_dealer_url" size="32" value="<?php echo esc_attr( get_option('_sSs_become_a_dealer_url') ); ?>" /></td>
-          </tr>
-          <tr valign="top">
-            <th scope="row">Find a Dealer URL</th>
-            <td><input type="text" name="_sSs_find_a_dealer_url" size="32" value="<?php echo esc_attr( get_option('_sSs_find_a_dealer_url') ); ?>" /></td>
           </tr>
         </table>
         <?php submit_button(); ?>
